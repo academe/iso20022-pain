@@ -1,13 +1,33 @@
-# SwissPayment
+# Pain.001
 
+FIXME:
 [![Build Status](https://travis-ci.org/z38/swiss-payment.png?branch=master)](https://travis-ci.org/z38/swiss-payment)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/z38/swiss-payment/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/z38/swiss-payment/?branch=master)
 
-**SwissPayment** is a PHP library to generate Swiss pain.001 XML messages (complies with ISO-20022).
+**Pain.001** is a PHP library to generate UK pain.001.001.06 XML messages (complies with ISO-20022).
 
 ## Installation
 
-Just install [Composer](http://getcomposer.org) and run `composer require z38/swiss-payment` in your project directory.
+Just install [Composer](http://getcomposer.org) and run `composer require academe/iso20022-pain` in your project directory.
+
+## TODO
+
+This library is based on the Swiss PAIN library.
+I am adapting it for UK usage.
+It will support pain.001.001.06 version.
+Future versions or multiple versions will need a rethink on how this package is structured.
+
+Until the updates are complete, take all these instructions with a pinch of salt;
+they will probably be wrong.
+
+Main changes:
+
+* New root namespace.
+* UK bank financial institution type.
+* Switch to `moneyphp\money` package rather than home-grown.
+* Support for supplementary info records.
+* Switch to version `06` of the pain.001 format.
+* UK-oriented XML namespaces.
 
 ## Usage
 
