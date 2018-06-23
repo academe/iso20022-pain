@@ -15,7 +15,7 @@ class ISRParticipantTest extends TestCase
      */
     public function testValid($number)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\Account\ISRParticipant', new ISRParticipant($number));
+        $this->assertInstanceOf(\Academe\Pain001\Account\ISRParticipant::class, new ISRParticipant($number));
     }
 
     /**

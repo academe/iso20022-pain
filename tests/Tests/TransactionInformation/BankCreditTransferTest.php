@@ -20,7 +20,7 @@ class BankCreditTransferTest extends TestCase
      */
     public function testInvalidCreditorAgent()
     {
-        $creditorAgent = $this->getMock('\Z38\SwissPayment\FinancialInstitutionInterface');
+        $creditorAgent = $this->getMock(\Academe\Pain001\FinancialInstitutionInterface::class);
 
         $transfer = new BankCreditTransfer(
             'id000',

@@ -18,7 +18,7 @@ class IIDTest extends TestCase
      */
     public function testValid($iid)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\FinancialInstitution\IID', new IID($iid));
+        $this->assertInstanceOf(\Academe\Pain001\FinancialInstitution\IID::class, new IID($iid));
     }
 
     public function validSamples()

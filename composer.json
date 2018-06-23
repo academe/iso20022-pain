@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Academe\\Pain001": "src"
+            "Academe\\Pain001\\": "src"
         }
     },
     "autoload-dev": {
-        "psr-0": {
-            "Z38\\SwissPayment\\Tests": "tests/"
+        "psr-4": {
+            "Academe\\Pain001\\": "tests/"
         }
     }
 }

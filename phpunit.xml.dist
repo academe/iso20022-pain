@@ -3,13 +3,13 @@
 <phpunit colors="true">
     <testsuites>
         <testsuite name="SwissPayment Test Suite">
-            <directory>tests/Z38/SwissPayment</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory suffix=".php">src/Z38/SwissPayment</directory>
+            <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
 </phpunit>

@@ -206,7 +206,7 @@ class CustomerCreditTransferTest extends TestCase
     public function testSchemaValidation()
     {
         $xml = $this->buildMessage()->asXml();
-        $schemaPath = __DIR__.'/../../../../'.self::SCHEMA_PATH;
+        $schemaPath = __DIR__.'/../../'.self::SCHEMA_PATH;
 
         $doc = new \DOMDocument();
         $doc->loadXML($xml);

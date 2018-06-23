@@ -14,7 +14,7 @@ class StructuredPostalAddressTest extends TestCase
      */
     public function testSanitize()
     {
-        $this->assertInstanceOf('Z38\SwissPayment\Address\StructuredPostalAddress', StructuredPostalAddress::sanitize(
+        $this->assertInstanceOf(\Academe\Pain001\Address\StructuredPostalAddress::class, StructuredPostalAddress::sanitize(
             'Dorfstrasse',
             '∅',
             'Pfaffenschlag bei Waidhofen an der Thaya',

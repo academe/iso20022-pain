@@ -4,7 +4,7 @@ namespace Academe\Pain001\Account;
 
 use DOMDocument;
 use InvalidArgumentException;
-use AccountInterface;
+use Academe\Pain001\AccountInterface;
 
 /**
  * PostalAccount holds details about a PostFinance account

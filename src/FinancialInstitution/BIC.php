@@ -6,7 +6,7 @@ namespace Academe\Pain001\FinancialInstitution;
  * BIC
  */
 
-use FinancialInstitutionInterface;
+use Academe\Pain001\FinancialInstitutionInterface;
 
 class BIC implements FinancialInstitutionInterface
 {

@@ -14,7 +14,7 @@ class UnstructuredPostalAddressTest extends TestCase
      */
     public function testSanitize()
     {
-        $this->assertInstanceOf('Z38\SwissPayment\Address\UnstructuredPostalAddress', UnstructuredPostalAddress::sanitize(
+        $this->assertInstanceOf(\Academe\Pain001\Address\UnstructuredPostalAddress::class, UnstructuredPostalAddress::sanitize(
             "Dorf—Strasse 3\n\n",
             "8000\tZürich"
         ));

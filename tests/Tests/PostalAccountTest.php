@@ -16,7 +16,7 @@ class PostalAccountTest extends TestCase
      */
     public function testValid($postalAccount)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\Account\PostalAccount', new PostalAccount($postalAccount));
+        $this->assertInstanceOf(\Academe\Pain001\Account\PostalAccount::class, new PostalAccount($postalAccount));
     }
 
     public function validSamples()

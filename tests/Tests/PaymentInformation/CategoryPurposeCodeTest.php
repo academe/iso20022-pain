@@ -1,15 +1,15 @@
 <?php
 
-namespace Academe\Pain001\Tests\TransactionInformation;
+namespace Academe\Pain001\Tests\PaymentInformation;
 
 use DOMDocument;
+use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
 use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\PurposeCode;
 
 /**
- * @coversDefaultClass \Academe\Pain001\TransactionInformation\PurposeCode
+ * @coversDefaultClass \Academe\Pain001\PaymentInformation\CategoryPurposeCode
  */
-class PurposeCodeTest extends TestCase
+class CategoryPurposeCodeTest extends TestCase
 {
     /**
      * @dataProvider validSamples
@@ -17,7 +17,7 @@ class PurposeCodeTest extends TestCase
      */
     public function testValid($code)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\TransactionInformation\PurposeCode', new PurposeCode($code));
+        $this->assertInstanceOf(\Academe\Pain001\PaymentInformation\CategoryPurposeCode::class, new CategoryPurposeCode($code));
     }
 
     public function validSamples()
@@ -25,8 +25,6 @@ class PurposeCodeTest extends TestCase
         return [
             ['SALA'], // salary payment
             ['PENS'], // pension payment
-            ['DNTS'], // dental services
-            ['B112'], // US mutual fund trailer fee (12b-1) payment
         ];
     }
 
@@ -37,7 +35,7 @@ class PurposeCodeTest extends TestCase
      */
     public function testInvalid($code)
     {
-        new PurposeCode($code);
+        new CategoryPurposeCode($code);
     }
 
     public function invalidSamples()
@@ -47,6 +45,7 @@ class PurposeCodeTest extends TestCase
             ['sala'],
             ['SAL'],
             [' SALA'],
+            ['B112'],
         ];
     }
 
@@ -56,11 +55,11 @@ class PurposeCodeTest extends TestCase
     public function testAsDom()
     {
         $doc = new DOMDocument();
-        $iid = new PurposeCode('PHON');
+        $iid = new CategoryPurposeCode('SALA');
 
         $xml = $iid->asDom($doc);
 
         $this->assertSame('Cd', $xml->nodeName);
-        $this->assertSame('PHON', $xml->textContent);
+        $this->assertSame('SALA', $xml->textContent);
     }
 }

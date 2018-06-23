@@ -25,7 +25,7 @@ class PaymentInformationTest extends TestCase
      */
     public function testInvalidDebtorAgent()
     {
-        $debtorAgent = $this->getMock('\Z38\SwissPayment\FinancialInstitutionInterface');
+        $debtorAgent = $this->getMock(\Academe\Pain001\FinancialInstitutionInterface::class);
 
         $payment = new PaymentInformation(
             'id000',
