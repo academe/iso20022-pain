@@ -1,14 +1,14 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
 use DOMDocument;
 use DOMXPath;
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\IID;
+use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\FinancialInstitution\IID;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\IID
+ * @coversDefaultClass \Academe\Pain001\FinancialInstitution\IID
  */
 class IIDTest extends TestCase
 {
@@ -18,7 +18,7 @@ class IIDTest extends TestCase
      */
     public function testValid($iid)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\IID', new IID($iid));
+        $this->assertInstanceOf('Z38\SwissPayment\FinancialInstitution\IID', new IID($iid));
     }
 
     public function validSamples()

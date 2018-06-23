@@ -1,14 +1,14 @@
 <?php
 
-namespace Z38\SwissPayment\Tests\Money;
+namespace Academe\Pain001\Tests\Money;
 
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\Tests\TestCase;
+use Academe\Pain001\Money;
+use Academe\Pain001\Tests\TestCase;
 
 class MixedTest extends TestCase
 {
     /**
-     * @covers \Z38\SwissPayment\Money\Mixed::plus
+     * @covers \Academe\Pain001\Money\Mixed::plus
      */
     public function testPlus()
     {
@@ -21,7 +21,7 @@ class MixedTest extends TestCase
     }
 
     /**
-     * @covers \Z38\SwissPayment\Money\Mixed::minus
+     * @covers \Academe\Pain001\Money\Mixed::minus
      */
     public function testMinus()
     {

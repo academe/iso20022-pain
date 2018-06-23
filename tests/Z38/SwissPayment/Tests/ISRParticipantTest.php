@@ -1,11 +1,11 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
-use Z38\SwissPayment\ISRParticipant;
+use Academe\Pain001\Account\ISRParticipant;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\ISRParticipant
+ * @coversDefaultClass \Academe\Pain001\Account\ISRParticipant
  */
 class ISRParticipantTest extends TestCase
 {
@@ -15,7 +15,7 @@ class ISRParticipantTest extends TestCase
      */
     public function testValid($number)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\ISRParticipant', new ISRParticipant($number));
+        $this->assertInstanceOf('Z38\SwissPayment\Account\ISRParticipant', new ISRParticipant($number));
     }
 
     /**

@@ -1,26 +1,31 @@
 {
-    "name": "z38/swiss-payment",
+    "name": "academe/iso20022-pain",
     "type": "library",
     "license": "MIT",
-    "description": "PHP library to generate Swiss pain.001 messages (complies with ISO-20022)",
-    "keywords": ["banking", "iso-20022", "six", "credit-transfer", "switzerland", "sepa", "xml"],
-    "homepage": "https://github.com/z38/swiss-payment",
+    "description": "PHP library to generate UK pain.001 messages (complies with ISO-20022)",
+    "keywords": ["banking", "iso-20022", "six", "credit-transfer", "uk", "united kingdom", "sepa", "xml", "fps"],
+    "homepage": "https://github.com/academe/iso20022-pain",
     "authors": [
         {
             "name": "z38",
             "homepage": "https://github.com/z38",
             "role": "Developer"
+        },
+        {
+            "name": "Jason Judge",
+            "homepage": "https://github.com/academe",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=7.2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.2"
     },
     "autoload": {
-        "psr-0": {
-            "Z38\\SwissPayment": "src/"
+        "psr-4": {
+            "Academe\\Pain001": "src"
         }
     },
     "autoload-dev": {

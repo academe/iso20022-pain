@@ -1,12 +1,12 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
 use InvalidArgumentException;
-use Z38\SwissPayment\PostalAccount;
+use Academe\Pain001\Account\PostalAccount;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\PostalAccount
+ * @coversDefaultClass \Academe\Pain001\Account\PostalAccount
  */
 class PostalAccountTest extends TestCase
 {
@@ -16,7 +16,7 @@ class PostalAccountTest extends TestCase
      */
     public function testValid($postalAccount)
     {
-        $this->assertInstanceOf('Z38\SwissPayment\PostalAccount', new PostalAccount($postalAccount));
+        $this->assertInstanceOf('Z38\SwissPayment\Account\PostalAccount', new PostalAccount($postalAccount));
     }
 
     public function validSamples()

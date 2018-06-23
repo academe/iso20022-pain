@@ -1,12 +1,12 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
 use DOMDocument;
-use Z38\SwissPayment\Text;
+use Academe\Pain001\Text;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\Text
+ * @coversDefaultClass \Academe\Pain001\Text
  */
 class TextTest extends TestCase
 {

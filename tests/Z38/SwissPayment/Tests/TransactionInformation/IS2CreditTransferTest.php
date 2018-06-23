@@ -1,16 +1,16 @@
 <?php
 
-namespace Z38\SwissPayment\Tests\TransactionInformation;
+namespace Academe\Pain001\Tests\TransactionInformation;
 
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\PostalAccount;
-use Z38\SwissPayment\StructuredPostalAddress;
-use Z38\SwissPayment\Tests\TestCase;
-use Z38\SwissPayment\TransactionInformation\IS2CreditTransfer;
+use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\Money;
+use Academe\Pain001\Account\PostalAccount;
+use Academe\Pain001\Address\StructuredPostalAddress;
+use Academe\Pain001\Tests\TestCase;
+use Academe\Pain001\TransactionInformation\IS2CreditTransfer;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\TransactionInformation\IS2CreditTransfer
+ * @coversDefaultClass \Academe\Pain001\TransactionInformation\IS2CreditTransfer
  */
 class IS2CreditTransferTest extends TestCase
 {

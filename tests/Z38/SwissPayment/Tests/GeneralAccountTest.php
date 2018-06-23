@@ -1,14 +1,14 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
 use InvalidArgumentException;
-use Z38\SwissPayment\GeneralAccount;
+use Academe\Pain001\Account\GeneralAccount;
 
 class GeneralAccountTest extends TestCase
 {
     /**
-     * @covers \Z38\SwissPayment\GeneralAccount::__construct
+     * @covers \Academe\Pain001\Account\GeneralAccount::__construct
      */
     public function testValid()
     {
@@ -16,7 +16,7 @@ class GeneralAccountTest extends TestCase
     }
 
     /**
-     * @covers \Z38\SwissPayment\GeneralAccount::__construct
+     * @covers \Academe\Pain001\Account\GeneralAccount::__construct
      * @expectedException InvalidArgumentException
      */
     public function testInvalid()
@@ -25,7 +25,7 @@ class GeneralAccountTest extends TestCase
     }
 
     /**
-     * @covers \Z38\SwissPayment\GeneralAccount::format
+     * @covers \Academe\Pain001\Account\GeneralAccount::format
      */
     public function testFormat()
     {

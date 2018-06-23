@@ -1,14 +1,14 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
-use Z38\SwissPayment\BIC;
+use Academe\Pain001\FinancialInstitution\BIC;
 
 class BICTest extends TestCase
 {
     /**
      * @dataProvider validSamples
-     * @covers \Z38\SwissPayment\BIC::__construct
+     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testValid($bic)
     {
@@ -16,7 +16,7 @@ class BICTest extends TestCase
     }
 
     /**
-     * @covers \Z38\SwissPayment\BIC::__construct
+     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testInvalidLength()
     {
@@ -25,7 +25,7 @@ class BICTest extends TestCase
     }
 
     /**
-     * @covers \Z38\SwissPayment\BIC::__construct
+     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testInvalidChars()
     {
@@ -35,7 +35,7 @@ class BICTest extends TestCase
 
     /**
      * @dataProvider validSamples
-     * @covers \Z38\SwissPayment\BIC::format
+     * @covers \Academe\Pain001\FinancialInstitution\BIC::format
      */
     public function testFormat($bic)
     {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
-use Z38\SwissPayment\UnstructuredPostalAddress;
+use Academe\Pain001\Address\UnstructuredPostalAddress;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\UnstructuredPostalAddress
+ * @coversDefaultClass \Academe\Pain001\Address\UnstructuredPostalAddress
  */
 class UnstructuredPostalAddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ class UnstructuredPostalAddressTest extends TestCase
      */
     public function testSanitize()
     {
-        $this->assertInstanceOf('Z38\SwissPayment\UnstructuredPostalAddress', UnstructuredPostalAddress::sanitize(
+        $this->assertInstanceOf('Z38\SwissPayment\Address\UnstructuredPostalAddress', UnstructuredPostalAddress::sanitize(
             "Dorf—Strasse 3\n\n",
             "8000\tZürich"
         ));

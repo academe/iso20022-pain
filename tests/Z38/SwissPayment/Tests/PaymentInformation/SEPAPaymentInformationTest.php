@@ -1,19 +1,19 @@
 <?php
 
-namespace Z38\SwissPayment\Tests\PaymentInformation;
+namespace Academe\Pain001\Tests\PaymentInformation;
 
-use Z38\SwissPayment\BIC;
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\PaymentInformation\SEPAPaymentInformation;
-use Z38\SwissPayment\StructuredPostalAddress;
-use Z38\SwissPayment\Tests\TestCase;
-use Z38\SwissPayment\TransactionInformation\BankCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\SEPACreditTransfer;
-use Z38\SwissPayment\UnstructuredPostalAddress;
+use Academe\Pain001\FinancialInstitution\BIC;
+use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\Money;
+use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
+use Academe\Pain001\Address\StructuredPostalAddress;
+use Academe\Pain001\Tests\TestCase;
+use Academe\Pain001\TransactionInformation\BankCreditTransfer;
+use Academe\Pain001\TransactionInformation\SEPACreditTransfer;
+use Academe\Pain001\Address\UnstructuredPostalAddress;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\PaymentInformation\SEPAPaymentInformation
+ * @coversDefaultClass \Academe\Pain001\PaymentInformation\SEPAPaymentInformation
  */
 class SEPAPaymentInformationTest extends TestCase
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Z38\SwissPayment\Tests;
+namespace Academe\Pain001\Tests;
 
-use Z38\SwissPayment\StructuredPostalAddress;
+use Academe\Pain001\Address\StructuredPostalAddress;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\StructuredPostalAddress
+ * @coversDefaultClass \Academe\Pain001\Address\StructuredPostalAddress
  */
 class StructuredPostalAddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ class StructuredPostalAddressTest extends TestCase
      */
     public function testSanitize()
     {
-        $this->assertInstanceOf('Z38\SwissPayment\StructuredPostalAddress', StructuredPostalAddress::sanitize(
+        $this->assertInstanceOf('Z38\SwissPayment\Address\StructuredPostalAddress', StructuredPostalAddress::sanitize(
             'Dorfstrasse',
             '∅',
             'Pfaffenschlag bei Waidhofen an der Thaya',

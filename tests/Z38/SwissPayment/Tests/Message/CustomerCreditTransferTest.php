@@ -1,29 +1,29 @@
 <?php
 
-namespace Z38\SwissPayment\Tests\Message;
+namespace Academe\Pain001\Tests\Message;
 
-use Z38\SwissPayment\BIC;
-use Z38\SwissPayment\FinancialInstitutionAddress;
-use Z38\SwissPayment\GeneralAccount;
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\IID;
-use Z38\SwissPayment\ISRParticipant;
-use Z38\SwissPayment\Message\CustomerCreditTransfer;
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\PaymentInformation\CategoryPurposeCode;
-use Z38\SwissPayment\PaymentInformation\PaymentInformation;
-use Z38\SwissPayment\PaymentInformation\SEPAPaymentInformation;
-use Z38\SwissPayment\PostalAccount;
-use Z38\SwissPayment\StructuredPostalAddress;
-use Z38\SwissPayment\Tests\TestCase;
-use Z38\SwissPayment\TransactionInformation\BankCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\ForeignCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\IS1CreditTransfer;
-use Z38\SwissPayment\TransactionInformation\IS2CreditTransfer;
-use Z38\SwissPayment\TransactionInformation\ISRCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\PurposeCode;
-use Z38\SwissPayment\TransactionInformation\SEPACreditTransfer;
-use Z38\SwissPayment\UnstructuredPostalAddress;
+use Academe\Pain001\FinancialInstitution\BIC;
+use Academe\Pain001\FinancialInstitutionAddress;
+use Academe\Pain001\Account\GeneralAccount;
+use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\FinancialInstitution\IID;
+use Academe\Pain001\Account\ISRParticipant;
+use Academe\Pain001\Message\CustomerCreditTransfer;
+use Academe\Pain001\Money;
+use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
+use Academe\Pain001\PaymentInformation\PaymentInformation;
+use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
+use Academe\Pain001\Account\PostalAccount;
+use Academe\Pain001\Address\StructuredPostalAddress;
+use Academe\Pain001\Tests\TestCase;
+use Academe\Pain001\TransactionInformation\BankCreditTransfer;
+use Academe\Pain001\TransactionInformation\ForeignCreditTransfer;
+use Academe\Pain001\TransactionInformation\IS1CreditTransfer;
+use Academe\Pain001\TransactionInformation\IS2CreditTransfer;
+use Academe\Pain001\TransactionInformation\ISRCreditTransfer;
+use Academe\Pain001\TransactionInformation\PurposeCode;
+use Academe\Pain001\TransactionInformation\SEPACreditTransfer;
+use Academe\Pain001\Address\UnstructuredPostalAddress;
 
 class CustomerCreditTransferTest extends TestCase
 {

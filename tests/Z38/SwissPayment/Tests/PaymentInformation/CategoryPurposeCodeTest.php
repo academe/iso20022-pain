@@ -1,13 +1,13 @@
 <?php
 
-namespace Z38\SwissPayment\Tests\PaymentInformation;
+namespace Academe\Pain001\Tests\PaymentInformation;
 
 use DOMDocument;
-use Z38\SwissPayment\PaymentInformation\CategoryPurposeCode;
-use Z38\SwissPayment\Tests\TestCase;
+use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
+use Academe\Pain001\Tests\TestCase;
 
 /**
- * @coversDefaultClass \Z38\SwissPayment\PaymentInformation\CategoryPurposeCode
+ * @coversDefaultClass \Academe\Pain001\PaymentInformation\CategoryPurposeCode
  */
 class CategoryPurposeCodeTest extends TestCase
 {
