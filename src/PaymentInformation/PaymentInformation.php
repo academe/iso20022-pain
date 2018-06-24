@@ -6,7 +6,8 @@ use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\FinancialInstitutionInterface;
 use Academe\Pain001\Account\IBAN;
 use Academe\Pain001\FinancialInstitution\IID;
-use Academe\Pain001\Money;
+use Money\Money;
+use Academe\Pain001\Money\Mixed;
 use Academe\Pain001\Text;
 use Academe\Pain001\TransactionInformation\CreditTransfer;
 
@@ -117,11 +118,11 @@ class PaymentInformation
     /**
      * Gets the sum of transactions
      *
-     * @return Money\Mixed Sum of transactions
+     * @return Mixed Sum of transactions
      */
     public function getTransactionSum()
     {
-        $sum = new Money\Mixed(0);
+        $sum = new Mixed(0);
 
         foreach ($this->transactions as $transaction) {
             $sum = $sum->plus($transaction->getAmount());

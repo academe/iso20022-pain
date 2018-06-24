@@ -6,7 +6,7 @@ use DOMDocument;
 use DOMXPath;
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\Account\PostalAccount;
@@ -66,7 +66,7 @@ class PaymentInformationTest extends TestCase
         $payment->addTransaction(new IS1CreditTransfer(
             'instr-001',
             'e2e-001',
-            new Money\CHF(10000), // CHF 100.00
+            Money::CHF(10000), // CHF 100.00
             'Fritz Bischof',
             new StructuredPostalAddress('Dorfstrasse', '17', '9911', 'Musterwald'),
             new PostalAccount('60-9-9')
@@ -74,7 +74,7 @@ class PaymentInformationTest extends TestCase
         $payment->addTransaction(new IS1CreditTransfer(
             'instr-002',
             'e2e-002',
-            new Money\CHF(30000), // CHF 300.00
+            Money::CHF(30000), // CHF 300.00
             'Franziska Meier',
             new StructuredPostalAddress('Altstadt', '1a', '4998', 'Muserhausen'),
             new PostalAccount('80-151-4')

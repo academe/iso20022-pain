@@ -4,7 +4,7 @@ namespace Academe\Pain001\Tests\PaymentInformation;
 
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
 use Academe\Pain001\Address\StructuredPostalAddress;
 use Academe\Pain001\Tests\TestCase;
@@ -46,7 +46,7 @@ class SEPAPaymentInformationTest extends TestCase
         $payment->addTransaction(new SEPACreditTransfer(
             'instr-001',
             'e2e-001',
-            new Money\EUR(70000), // EUR 700.00
+            Money::EUR(70000), // EUR 700.00
             'Muster Immo AG',
             new UnstructuredPostalAddress('Musterstraße 35', '80333 München', 'DE'),
             new IBAN('DE89 3704 0044 0532 0130 00'),
@@ -78,7 +78,7 @@ class SEPAPaymentInformationTest extends TestCase
         $payment->addTransaction(new BankCreditTransfer(
             'instr-001',
             'e2e-001',
-            new Money\CHF(130000), // CHF 1300.00
+            Money::CHF(130000), // CHF 1300.00
             'Muster Transport AG',
             new StructuredPostalAddress('Wiesenweg', '14b', '8058', 'Zürich-Flughafen'),
             new IBAN('CH51 0022 5225 9529 1301 C'),

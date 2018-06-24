@@ -8,9 +8,9 @@ use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\FinancialInstitutionInterface;
 use Academe\Pain001\Account\IBAN;
 use Academe\Pain001\FinancialInstitution\IID;
-use Academe\Pain001\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PostalAddressInterface;
+use Money\Money;
 
 /**
  * BankCreditTransfer contains all the information about a type 3 transaction.
@@ -35,14 +35,21 @@ class BankCreditTransfer extends CreditTransfer
      *
      * @throws \InvalidArgumentException When the amount is not in EUR or CHF or when the creditor agent is not BIC or IID.
      */
-    public function __construct($instructionId, $endToEndId, Money\Money $amount, $creditorName, PostalAddressInterface $creditorAddress, IBAN $creditorIBAN, FinancialInstitutionInterface $creditorAgent)
-    {
-        if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount,
+        $creditorName,
+        PostalAddressInterface $creditorAddress,
+        IBAN $creditorIBAN,
+        FinancialInstitutionInterface $creditorAgent
+    ) {
+        /*if (! $amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
                 'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
-        }
+        }*/
 
         if (!$creditorAgent instanceof BIC && !$creditorAgent instanceof IID) {
             throw new InvalidArgumentException('The creditor agent must be an instance of BIC or IID.');

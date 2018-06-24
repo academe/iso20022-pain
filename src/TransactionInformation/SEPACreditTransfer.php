@@ -5,7 +5,7 @@ namespace Academe\Pain001\TransactionInformation;
 use DOMDocument;
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PostalAddressInterface;
 
@@ -30,8 +30,15 @@ class SEPACreditTransfer extends CreditTransfer
      * @param IBAN     $creditorIBAN     IBAN of the creditor
      * @param BIC|null $creditorAgentBIC BIC of the creditor's financial institution
      */
-    public function __construct($instructionId, $endToEndId, Money\EUR $amount, $creditorName, PostalAddressInterface $creditorAddress, IBAN $creditorIBAN, BIC $creditorAgentBIC = null)
-    {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount, // Must be EUR (TODO: validate)
+        $creditorName,
+        PostalAddressInterface $creditorAddress,
+        IBAN $creditorIBAN,
+        BIC $creditorAgentBIC = null
+    ) {
         parent::__construct($instructionId, $endToEndId, $amount, $creditorName, $creditorAddress);
 
         $this->creditorIBAN = $creditorIBAN;

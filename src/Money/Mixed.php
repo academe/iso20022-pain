@@ -5,8 +5,17 @@ namespace Academe\Pain001\Money;
 /**
  * Sum of money in mixed currencies
  */
-class Mixed extends Money
+
+use Money\Money;
+use Money\Currencies\ISOCurrencies;
+
+class Mixed
 {
+    /**
+     * @var int
+     */
+    protected $cents;
+
     /**
      * @var int
      */
@@ -15,21 +24,13 @@ class Mixed extends Money
     /**
      * Constructor
      *
-     * @param int $cents    Amount of money in cents
+     * @param int $cents    Amount of money in minor units
      * @param int $decimals Number of minor units
      */
     public function __construct($cents, $decimals = 0)
     {
-        parent::__construct($cents);
+        $this->cents = is_int($cents) ? $cents : intval(round($cents));
         $this->decimals = $decimals;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    final public function getCurrency()
-    {
-        return null;
     }
 
     /**
@@ -41,13 +42,23 @@ class Mixed extends Money
     }
 
     /**
+     * Returns the amount of money in cents
+     *
+     * @return int The amount in cents
+     */
+    public function getAmount()
+    {
+        return $this->cents;
+    }
+
+    /**
      * Returns the sum of this and an other amount of money
      *
-     * @param Money $addend The addend
+     * @param Mixed|Money $addend The addend
      *
-     * @return Money The sum
+     * @return Mixed The sum
      */
-    public function plus(Money $addend)
+    public function plus($addend)
     {
         list($thisCents, $addendCents, $decimals) = self::normalizeDecimals($this, $addend);
 
@@ -57,11 +68,11 @@ class Mixed extends Money
     /**
      * Returns the subtraction of this and an other amount of money
      *
-     * @param Money $subtrahend The subtrahend
+     * @param Mixed|Money  $subtrahend The subtrahend
      *
-     * @return Money The difference
+     * @return Mixed The difference
      */
-    public function minus(Money $subtrahend)
+    public function minus($subtrahend)
     {
         list($thisCents, $subtrahendCents, $decimals) = self::normalizeDecimals($this, $subtrahend);
 
@@ -71,21 +82,68 @@ class Mixed extends Money
     /**
      * Normalizes two amounts such that they have the same number of decimals
      *
-     * @param Money $a
-     * @param Money $b
+     * @param Mixed|Money $a
+     * @param Mixed|Money $b
      *
      * @return array An array containing the two amounts and number of decimals
      */
-    protected static function normalizeDecimals(Money $a, Money $b)
+    protected static function normalizeDecimals($a, $b)
     {
-        $decimalsDiff = ($a->getDecimals() - $b->getDecimals());
-        $decimalsMax = max($a->getDecimals(), $b->getDecimals());
-        if ($decimalsDiff > 0) {
-            return [$a->getAmount(), pow(10, $decimalsDiff) * $b->getAmount(), $decimalsMax];
-        } elseif ($decimalsDiff < 0) {
-            return [pow(10, -$decimalsDiff) * $a->getAmount(), $b->getAmount(), $decimalsMax];
+        $currencies = new ISOCurrencies();
+
+        if ($a instanceof Mixed) {
+            $aDecimals = $a->getDecimals();
+        } elseif ($a instanceof Money) {
+            $aDecimals = $currencies->subunitFor($a->getCurrency());
         } else {
-            return [$a->getAmount(), $b->getAmount(), $decimalsMax];
+            throw new InvalidArgumentException(sprintf(
+                'The amount must be an instance of Academe\Pain001\Mixed or Money\Money (instance of %s given).',
+                get_class($b)
+            ));
+        }
+
+        if ($b instanceof Mixed) {
+            $bDecimals = $b->getDecimals();
+        } elseif ($b instanceof Money) {
+            $bDecimals = $currencies->subunitFor($b->getCurrency());
+        } else {
+            throw new InvalidArgumentException(sprintf(
+                'The amount must be an instance of Academe\Pain001\Mixed or Money\Money (instance of %s given).',
+                get_class($b)
+            ));
+        }
+
+        $decimalsDiff = ($aDecimals - $bDecimals);
+        $decimalsMax = max($aDecimals, $bDecimals);
+
+        $aAmount = $a->getAmount();
+        $bAmount = $b->getAmount();
+
+        if ($decimalsDiff > 0) {
+            return [$aAmount, pow(10, $decimalsDiff) * $bAmount, $decimalsMax];
+        } elseif ($decimalsDiff < 0) {
+            return [pow(10, -$decimalsDiff) * $aAmount, $bAmount, $decimalsMax];
+        } else {
+            return [$aAmount, $bAmount, $decimalsMax];
+        }
+    }
+
+    /**
+     * Returns a formatted string (e.g. 15.560)
+     *
+     * @return string The formatted value
+     */
+    public function format()
+    {
+        if ($this->getDecimals() > 0) {
+            $sign = ($this->cents < 0 ? '-' : '');
+            $base = pow(10, $this->getDecimals());
+            $minor = abs($this->cents) % $base;
+            $major = (abs($this->cents) - $minor) / $base;
+
+            return sprintf('%s%d.%0'.$this->getDecimals().'d', $sign, $major, $minor);
+        } else {
+            return sprintf('%d', $this->cents);
         }
     }
 }

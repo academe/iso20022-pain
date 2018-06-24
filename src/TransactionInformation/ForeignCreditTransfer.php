@@ -7,7 +7,7 @@ use Academe\Pain001\AccountInterface;
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\FinancialInstitutionAddress;
 use Academe\Pain001\FinancialInstitutionInterface;
-use Academe\Pain001\Money\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PostalAddressInterface;
 
@@ -37,8 +37,15 @@ class ForeignCreditTransfer extends CreditTransfer
      * @param \Academe\Pain001\AccountInterface\AccountInterface                $creditorAccount Account of the creditor
      * @param BIC|FinancialInstitutionAddress $creditorAgent   BIC or address of the creditor's financial institution
      */
-    public function __construct($instructionId, $endToEndId, Money $amount, $creditorName, PostalAddressInterface $creditorAddress, AccountInterface $creditorAccount, FinancialInstitutionInterface $creditorAgent)
-    {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount,
+        $creditorName,
+        PostalAddressInterface $creditorAddress,
+        AccountInterface $creditorAccount,
+        FinancialInstitutionInterface $creditorAgent
+    ) {
         parent::__construct($instructionId, $endToEndId, $amount, $creditorName, $creditorAddress);
 
         if (!$creditorAgent instanceof BIC && !$creditorAgent instanceof FinancialInstitutionAddress) {

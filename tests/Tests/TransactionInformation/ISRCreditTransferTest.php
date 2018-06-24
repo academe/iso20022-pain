@@ -3,7 +3,7 @@
 namespace Academe\Pain001\Tests\TransactionInformation;
 
 use Academe\Pain001\Account\ISRParticipant;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\Address\StructuredPostalAddress;
 use Academe\Pain001\Tests\TestCase;
 use Academe\Pain001\TransactionInformation\ISRCreditTransfer;
@@ -22,7 +22,7 @@ class ISRCreditTransferTest extends TestCase
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
-            new Money\USD(100),
+            Money::USD(100),
             new ISRParticipant('10-2424-4'),
             '120000000000234478943216899'
         );
@@ -37,7 +37,7 @@ class ISRCreditTransferTest extends TestCase
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
-            new Money\CHF(100),
+            Money::CHF(100),
             new ISRParticipant('01-25083-7'),
             '120000000000234478943216891'
         );
@@ -52,7 +52,7 @@ class ISRCreditTransferTest extends TestCase
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
-            new Money\CHF(100),
+            Money::CHF(100),
             new ISRParticipant('01-25083-7'),
             '120000000000234478943216899'
         );
@@ -68,7 +68,7 @@ class ISRCreditTransferTest extends TestCase
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
-            new Money\CHF(100),
+            Money::CHF(100),
             new ISRParticipant('01-25083-7'),
             '120000000000234478943216899'
         );

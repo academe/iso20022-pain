@@ -4,7 +4,7 @@ namespace Academe\Pain001\TransactionInformation;
 
 use DOMDocument;
 use InvalidArgumentException;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\Account\PostalAccount;
 use Academe\Pain001\PostalAddressInterface;
@@ -26,14 +26,20 @@ class IS1CreditTransfer extends CreditTransfer
      *
      * @throws \InvalidArgumentException When the amount is not in EUR or CHF.
      */
-    public function __construct($instructionId, $endToEndId, Money\Money $amount, $creditorName, PostalAddressInterface $creditorAddress, PostalAccount $creditorAccount)
-    {
-        if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount,
+        $creditorName,
+        PostalAddressInterface $creditorAddress,
+        PostalAccount $creditorAccount
+    ) {
+        /*if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
                 'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
-        }
+        }*/
 
         parent::__construct($instructionId, $endToEndId, $amount, $creditorName, $creditorAddress);
 

@@ -9,7 +9,7 @@ use Academe\Pain001\Account\IBAN;
 use Academe\Pain001\FinancialInstitution\IID;
 use Academe\Pain001\Account\ISRParticipant;
 use Academe\Pain001\Message\CustomerCreditTransfer;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
@@ -35,7 +35,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction = new BankCreditTransfer(
             'instr-001',
             'e2e-001',
-            new Money\CHF(130000), // CHF 1300.00
+            Money::CHF(130000), // CHF 1300.00
             'Muster Transport AG',
             new StructuredPostalAddress('Wiesenweg', '14b', '8058', 'Zürich-Flughafen'),
             new IBAN('CH51 0022 5225 9529 1301 C'),
@@ -45,7 +45,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction2 = new IS1CreditTransfer(
             'instr-002',
             'e2e-002',
-            new Money\CHF(30000), // CHF 300.00
+            Money::CHF(30000), // CHF 300.00
             'Finanzverwaltung Stadt Musterhausen',
             new StructuredPostalAddress('Altstadt', '1a', '4998', 'Muserhausen'),
             new PostalAccount('80-5928-4')
@@ -54,7 +54,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction3 = new IS2CreditTransfer(
             'instr-003',
             'e2e-003',
-            new Money\CHF(20000), // CHF 200.00
+            Money::CHF(20000), // CHF 200.00
             'Druckerei Muster GmbH',
             new StructuredPostalAddress('Gartenstrasse', '61', '3000', 'Bern'),
             new IBAN('CH03 0900 0000 3054 1118 8'),
@@ -66,7 +66,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction4 = new BankCreditTransfer(
             'instr-004',
             'e2e-004',
-            new Money\CHF(30000), // CHF 300.00
+            Money::CHF(30000), // CHF 300.00
             'Muster Transport AG',
             new StructuredPostalAddress('Wiesenweg', '14b', '8058', 'Zürich-Flughafen'),
             $iban4,
@@ -77,7 +77,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction5 = new SEPACreditTransfer(
             'instr-005',
             'e2e-005',
-            new Money\EUR(70000), // EUR 700.00
+            Money::EUR(70000), // EUR 700.00
             'Muster Immo AG',
             new UnstructuredPostalAddress('Musterstraße 35', '80333 München', 'DE'),
             new IBAN('DE89 3704 0044 0532 0130 00'),
@@ -87,7 +87,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction6 = new ForeignCreditTransfer(
             'instr-006',
             'e2e-006',
-            new Money\GBP(6500), // GBP 65.00
+            Money::GBP(6500), // GBP 65.00
             'United Development Ltd',
             new UnstructuredPostalAddress('George Street', 'BA1 2FJ Bath', 'GB'),
             new IBAN('GB29 NWBK 6016 1331 9268 19'),
@@ -97,7 +97,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction7 = new ForeignCreditTransfer(
             'instr-007',
             'e2e-007',
-            new Money\KWD(300001), // KWD 300.001
+            Money::KWD(300001), // KWD 300.001
             'United Development Kuwait',
             new UnstructuredPostalAddress('P.O. Box 23954 Safat', '13100 Kuwait', 'KW'),
             new IBAN('BR97 0036 0305 0000 1000 9795 493P 1'),
@@ -107,7 +107,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction8 = new ForeignCreditTransfer(
             'instr-008',
             'e2e-008',
-            new Money\GBP(4500), // GBP 45.00
+            Money::GBP(4500), // GBP 45.00
             'United Development Belgium SA/NV',
             new UnstructuredPostalAddress('Oostjachtpark 187', '6743 Buzenol', 'BE'),
             new GeneralAccount('123-4567890-78'),
@@ -118,7 +118,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction9 = new SEPACreditTransfer(
             'instr-009',
             'e2e-009',
-            new Money\EUR(10000), // EUR 100.00
+            Money::EUR(10000), // EUR 100.00
             'Bau Muster AG',
             new UnstructuredPostalAddress('Musterallee 11', '10115 Berlin', 'DE'),
             new IBAN('DE22 2665 0001 9311 6826 12'),
@@ -128,7 +128,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction10 = new ISRCreditTransfer(
             'instr-010',
             'e2e-010',
-            new Money\CHF(20000), // CHF 200.00
+            Money::CHF(20000), // CHF 200.00
             new ISRParticipant('01-1439-8'),
             '210000000003139471430009017'
         );
@@ -136,7 +136,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction11 = new ISRCreditTransfer(
             'instr-011',
             'e2e-011',
-            new Money\CHF(20000), // CHF 200.00
+            Money::CHF(20000), // CHF 200.00
             new ISRParticipant('01-95106-8'),
             '6019701803969733825'
         );
@@ -148,7 +148,7 @@ class CustomerCreditTransferTest extends TestCase
         $transaction12 = new IS1CreditTransfer(
             'instr-012',
             'e2e-012',
-            new Money\CHF(50000), // CHF 500.00
+            Money::CHF(50000), // CHF 500.00
             'Meier & Söhne AG',
             new StructuredPostalAddress('Dorfstrasse', '17', '9911', 'Musterwald'),
             new PostalAccount('60-9-9')

@@ -6,7 +6,7 @@ use DOMDocument;
 use InvalidArgumentException;
 use LogicException;
 use Academe\Pain001\Account\ISRParticipant;
-use Academe\Pain001\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\Account\PostalAccount;
 use Academe\Pain001\PostalAddressInterface;
@@ -35,14 +35,19 @@ class ISRCreditTransfer extends CreditTransfer
      *
      * @throws InvalidArgumentException When the amount or the creditor reference is invalid.
      */
-    public function __construct($instructionId, $endToEndId, Money\Money $amount, ISRParticipant $creditorAccount, $creditorReference)
-    {
-        if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount,
+        ISRParticipant $creditorAccount,
+        $creditorReference
+    ) {
+        /*if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
                 'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
-        }
+        }*/
 
         if (!preg_match('/^[0-9]{1,27}$/', $creditorReference) || !PostalAccount::validateCheckDigit($creditorReference)) {
             throw new InvalidArgumentException('ISR creditor reference is invalid.');

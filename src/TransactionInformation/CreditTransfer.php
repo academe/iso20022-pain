@@ -2,10 +2,12 @@
 
 namespace Academe\Pain001\TransactionInformation;
 
-use Academe\Pain001\Money\Money;
+use Money\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PostalAddressInterface;
 use Academe\Pain001\Text;
+use Money\Currencies\ISOCurrencies;
+use Money\Formatter\DecimalMoneyFormatter;
 
 /**
  * CreditTransfer contains all the information about the beneficiary and further information about the transaction.
@@ -68,8 +70,13 @@ abstract class CreditTransfer
      *
      * @throws \InvalidArgumentException When any of the inputs contain invalid characters or are too long.
      */
-    public function __construct($instructionId, $endToEndId, Money $amount, $creditorName, PostalAddressInterface $creditorAddress)
-    {
+    public function __construct(
+        $instructionId,
+        $endToEndId,
+        Money $amount,
+        $creditorName,
+        PostalAddressInterface $creditorAddress
+    ) {
         $this->instructionId = Text::assertIdentifier($instructionId);
         $this->endToEndId = Text::assertIdentifier($endToEndId);
         $this->amount = $amount;
@@ -179,9 +186,12 @@ abstract class CreditTransfer
             $root->appendChild($paymentType);
         }
 
+        $currencies = new ISOCurrencies();
+        $moneyFormatter = new DecimalMoneyFormatter($currencies);
+
         $amount = $doc->createElement('Amt');
-        $instdAmount = $doc->createElement('InstdAmt', $this->amount->format());
-        $instdAmount->setAttribute('Ccy', $this->amount->getCurrency());
+        $instdAmount = $doc->createElement('InstdAmt', $moneyFormatter->format($this->amount));
+        $instdAmount->setAttribute('Ccy', $this->amount->getCurrency()->getCode());
         $amount->appendChild($instdAmount);
         $root->appendChild($amount);
 

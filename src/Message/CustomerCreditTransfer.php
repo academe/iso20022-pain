@@ -107,8 +107,10 @@ class CustomerCreditTransfer extends AbstractMessage
     protected function buildDom(\DOMDocument $doc)
     {
         $transactionCount = 0;
-        $transactionSum = new Money\Mixed(0);
+        $transactionSum = new \Academe\Pain001\Money\Mixed(0);
+
         foreach ($this->payments as $payment) {
+            // Each payment may contain multiple transactions.
             $transactionCount += $payment->getTransactionCount();
             $transactionSum = $transactionSum->plus($payment->getTransactionSum());
         }
