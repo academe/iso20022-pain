@@ -4,7 +4,9 @@ namespace Academe\Pain001\PaymentInformation;
 
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\FinancialInstitutionInterface;
+use Academe\Pain001\AccountInterface;
 use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\Account\UkBank;
 use Academe\Pain001\FinancialInstitution\IID;
 use Money\Money;
 use Academe\Pain001\Money\Mixed;
@@ -64,7 +66,7 @@ class PaymentInformation
     /**
      * @var IBAN
      */
-    protected $debtorIBAN;
+    protected $debtorAccountDetail;
 
     /**
      * Constructor
@@ -76,8 +78,12 @@ class PaymentInformation
      *
      * @throws \InvalidArgumentException When any of the inputs contain invalid characters or are too long.
      */
-    public function __construct($id, $debtorName, FinancialInstitutionInterface $debtorAgent, IBAN $debtorIBAN)
-    {
+    public function __construct(
+        $id,
+        $debtorName,
+        FinancialInstitutionInterface $debtorAgent,
+        AccountInterface $debtorAccountDetail
+    ) {
         if (!$debtorAgent instanceof BIC && !$debtorAgent instanceof IID) {
             throw new \InvalidArgumentException('The debtor agent must be an instance of BIC or IID.');
         }
@@ -88,7 +94,7 @@ class PaymentInformation
         $this->executionDate = new \DateTime();
         $this->debtorName = Text::assert($debtorName, 70);
         $this->debtorAgent = $debtorAgent;
-        $this->debtorIBAN = $debtorIBAN;
+        $this->debtorAccountDetail = $debtorAccountDetail;
     }
 
     /**
@@ -250,7 +256,22 @@ class PaymentInformation
 
         $debtorAccount = $doc->createElement('DbtrAcct');
         $debtorAccountId = $doc->createElement('Id');
-        $debtorAccountId->appendChild($doc->createElement('IBAN', $this->debtorIBAN->normalize()));
+
+        if ($this->debtorAccountDetail instanceof IBAN) {
+            $debtorAccountId->appendChild(
+                $doc->createElement('IBAN', $this->debtorAccountDetail->normalize())
+            );
+        }
+
+        if ($this->debtorAccountDetail instanceof UkBank) {
+            $other = $debtorAccountId->appendChild(
+                $doc->createElement('Othr')
+            );
+            $other->appendChild(
+                $doc->createElement('Id', $this->debtorAccountDetail->normalize())
+            );
+        }
+
         $debtorAccount->appendChild($debtorAccountId);
         $root->appendChild($debtorAccount);
 

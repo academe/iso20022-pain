@@ -7,6 +7,7 @@ use InvalidArgumentException;
 use Academe\Pain001\FinancialInstitution\BIC;
 use Academe\Pain001\FinancialInstitutionInterface;
 use Academe\Pain001\Account\IBAN;
+use Academe\Pain001\AccountInterface;
 use Academe\Pain001\FinancialInstitution\IID;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\PostalAddressInterface;
@@ -18,7 +19,7 @@ use Money\Money;
 class BankCreditTransfer extends CreditTransfer
 {
     /**
-     * @var IBAN
+     * @var AccountInterface
      */
     protected $creditorIBAN;
 
@@ -30,7 +31,7 @@ class BankCreditTransfer extends CreditTransfer
     /**
      * {@inheritdoc}
      *
-     * @param IBAN    $creditorIBAN  IBAN of the creditor
+     * @param AccountInterface    $creditorIBAN  IBAN of the creditor
      * @param BIC|IID $creditorAgent BIC or IID of the creditor's financial institution
      *
      * @throws \InvalidArgumentException When the amount is not in EUR or CHF or when the creditor agent is not BIC or IID.
@@ -41,7 +42,7 @@ class BankCreditTransfer extends CreditTransfer
         Money $amount,
         $creditorName,
         PostalAddressInterface $creditorAddress,
-        IBAN $creditorIBAN,
+        AccountInterface $creditorIBAN,
         FinancialInstitutionInterface $creditorAgent
     ) {
         /*if (! $amount instanceof Money\EUR && !$amount instanceof Money\CHF) {

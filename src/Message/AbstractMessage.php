@@ -71,7 +71,7 @@ abstract class AbstractMessage implements MessageInterface
      */
     public function getSoftwareName()
     {
-        return 'Z38_SwissPayment';
+        return 'Academe_Iso20022_Pain001';
     }
 
     /**
@@ -81,7 +81,7 @@ abstract class AbstractMessage implements MessageInterface
      */
     public function getSoftwareVersion()
     {
-        return '0.6.0';
+        return '0.5.0';
     }
 
     /**

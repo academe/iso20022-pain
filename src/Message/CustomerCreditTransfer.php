@@ -90,6 +90,7 @@ class CustomerCreditTransfer extends AbstractMessage
      */
     protected function getSchemaName()
     {
+        return 'urn:iso:std:iso:20022:tech:xsd:$pain.001.001.06';
         return 'http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd';
     }
 
@@ -98,6 +99,7 @@ class CustomerCreditTransfer extends AbstractMessage
      */
     protected function getSchemaLocation()
     {
+        return 'pain.001.001.06.xsd';
         return 'pain.001.001.03.ch.02.xsd';
     }
 
