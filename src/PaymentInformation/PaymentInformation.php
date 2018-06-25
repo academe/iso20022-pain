@@ -84,9 +84,10 @@ class PaymentInformation
         FinancialInstitutionInterface $debtorAgent,
         AccountInterface $debtorAccountDetail
     ) {
-        if (!$debtorAgent instanceof BIC && !$debtorAgent instanceof IID) {
+        // Also allows UkBank
+        /*if (!$debtorAgent instanceof BIC && !$debtorAgent instanceof IID) {
             throw new \InvalidArgumentException('The debtor agent must be an instance of BIC or IID.');
-        }
+        }*/
 
         $this->id = Text::assertIdentifier($id);
         $this->transactions = [];

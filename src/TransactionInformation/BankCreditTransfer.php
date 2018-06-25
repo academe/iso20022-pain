@@ -52,9 +52,10 @@ class BankCreditTransfer extends CreditTransfer
             ));
         }*/
 
-        if (!$creditorAgent instanceof BIC && !$creditorAgent instanceof IID) {
+        // Also allows UkBank, and presumably other institutions.
+        /*if (!$creditorAgent instanceof BIC && !$creditorAgent instanceof IID) {
             throw new InvalidArgumentException('The creditor agent must be an instance of BIC or IID.');
-        }
+        }*/
 
         parent::__construct($instructionId, $endToEndId, $amount, $creditorName, $creditorAddress);
 
