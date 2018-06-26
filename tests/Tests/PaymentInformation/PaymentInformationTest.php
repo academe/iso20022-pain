@@ -20,8 +20,9 @@ use Academe\Pain001\TransactionInformation\IS1CreditTransfer;
 class PaymentInformationTest extends TestCase
 {
     /**
+     * No longer invalid.
      * @covers ::__construct
-     * @expectedException \InvalidArgumentException
+     * @ expectedException \InvalidArgumentException
      */
     public function testInvalidDebtorAgent()
     {

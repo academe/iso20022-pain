@@ -27,8 +27,10 @@ use Academe\Pain001\Address\UnstructuredPostalAddress;
 
 class CustomerCreditTransferTest extends TestCase
 {
-    const SCHEMA = 'http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd';
-    const SCHEMA_PATH = 'pain.001.001.03.ch.02.xsd';
+    const SCHEMA = 'urn:iso:std:iso:20022:tech:xsd:pain.001.001.06';
+    //const SCHEMA = 'http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd';
+    const SCHEMA_PATH = 'pain.001.001.06.xsd';
+    //const SCHEMA_PATH = 'pain.001.001.03.ch.02.xsd';
 
     protected function buildMessage()
     {

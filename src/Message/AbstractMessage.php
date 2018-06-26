@@ -45,7 +45,10 @@ abstract class AbstractMessage implements MessageInterface
 
         $doc = new \DOMDocument('1.0', 'UTF-8');
         $root = $doc->createElement('Document');
-        $root->setAttribute('xmlns', $schema);
+        // Remove the $ from the schema for the xmlns.
+        // I have no idea why it is there, what it does, why it must be
+        // in the schemaLocation but not the xmlns attribute. It just does.
+        $root->setAttribute('xmlns', str_replace('$', '', $schema));
         if ($location !== null) {
             $root->setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
             $root->setAttribute('xsi:schemaLocation', $schema.' '.$location);
@@ -71,7 +74,7 @@ abstract class AbstractMessage implements MessageInterface
      */
     public function getSoftwareName()
     {
-        return 'Academe_Iso20022_Pain001';
+        return 'Consilience_Iso20022_Pain001';
     }
 
     /**

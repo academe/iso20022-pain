@@ -189,6 +189,17 @@ class PaymentInformation
     }
 
     /**
+     * Sets the local instrument
+     *
+     * @return $this
+     */
+    public function setLocalInstrument($value)
+    {
+        $this->localInstrument = $value;
+        return $this;
+    }
+
+    /**
      * Gets the service level
      *
      * @return string|null The service level
@@ -225,27 +236,35 @@ class PaymentInformation
 
         $root->appendChild(Text::xml($doc, 'PmtInfId', $this->id));
         $root->appendChild($doc->createElement('PmtMtd', 'TRF'));
+
+        // Payment Type: 10=SIP 30=SOP 40=FDP
+
         $root->appendChild($doc->createElement('BtchBookg', ($this->batchBooking ? 'true' : 'false')));
 
         if ($this->hasPaymentTypeInformation()) {
             $paymentType = $doc->createElement('PmtTpInf');
             $localInstrument = $this->localInstrument ?: $this->inferLocalInstrument();
+
             if ($localInstrument !== null) {
                 $localInstrumentNode = $doc->createElement('LclInstrm');
                 $localInstrumentNode->appendChild($doc->createElement('Prtry', $localInstrument));
                 $paymentType->appendChild($localInstrumentNode);
             }
+
             $serviceLevel = $this->serviceLevel ?: $this->inferServiceLevel();
+
             if ($serviceLevel !== null) {
                 $serviceLevelNode = $doc->createElement('SvcLvl');
                 $serviceLevelNode->appendChild($doc->createElement('Cd', $serviceLevel));
                 $paymentType->appendChild($serviceLevelNode);
             }
+
             if ($this->categoryPurpose !== null) {
                 $categoryPurposeNode = $doc->createElement('CtgyPurp');
                 $categoryPurposeNode->appendChild($this->categoryPurpose->asDom($doc));
                 $paymentType->appendChild($categoryPurposeNode);
             }
+
             $root->appendChild($paymentType);
         }
 

@@ -49,7 +49,7 @@ class BIC implements FinancialInstitutionInterface
     public function asDom(\DOMDocument $doc)
     {
         $xml = $doc->createElement('FinInstnId');
-        $xml->appendChild($doc->createElement('BIC', $this->format()));
+        $xml->appendChild($doc->createElement('BICFI', $this->format()));
 
         return $xml;
     }

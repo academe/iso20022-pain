@@ -5,6 +5,7 @@ namespace Academe\Pain001\Message;
 use Academe\Pain001\Money;
 use Academe\Pain001\PaymentInformation\PaymentInformation;
 use Academe\Pain001\Text;
+use Academe\Pain001\SupplementaryDataInterface;
 
 /**
  * CustomerCreditTransfer represents a Customer Credit Transfer Initiation (pain.001) message
@@ -24,7 +25,12 @@ class CustomerCreditTransfer extends AbstractMessage
     /**
      * @var array
      */
-    protected $payments;
+    protected $payments = [];
+
+    /**
+     * @var array
+     */
+    protected $supplementaryData = [];
 
     /**
      * @var \DateTime
@@ -34,7 +40,7 @@ class CustomerCreditTransfer extends AbstractMessage
     /**
      * Constructor
      *
-     * @param string $id              Identifier of the message (should usually be unique over a period of at least 90 days)
+     * @param string $id Identifier of the message (should usually be unique over a period of at least 90 days)
      * @param string $initiatingParty Name of the initiating party
      *
      * @throws \InvalidArgumentException When any of the inputs contain invalid characters or are too long.
@@ -43,7 +49,6 @@ class CustomerCreditTransfer extends AbstractMessage
     {
         $this->id = Text::assertIdentifier($id);
         $this->initiatingParty = Text::assert($initiatingParty, 70);
-        $this->payments = [];
         $this->creationTime = new \DateTime();
     }
 
@@ -76,6 +81,20 @@ class CustomerCreditTransfer extends AbstractMessage
     }
 
     /**
+     * Adds a supplementary data object
+     *
+     * @param PaymentInformation $payment The payment to be added
+     *
+     * @return CustomerCreditTransfer This message
+     */
+    public function addSupplementaryData(SupplementaryDataInterface $supplementaryData)
+    {
+        $this->supplementaryData[] = $supplementaryData;
+
+        return $this;
+    }
+
+    /**
      * Gets the number of payments
      *
      * @return int Number of payments
@@ -91,7 +110,7 @@ class CustomerCreditTransfer extends AbstractMessage
     protected function getSchemaName()
     {
         return 'urn:iso:std:iso:20022:tech:xsd:$pain.001.001.06';
-        return 'http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd';
+        //return 'http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd';
     }
 
     /**
@@ -100,7 +119,7 @@ class CustomerCreditTransfer extends AbstractMessage
     protected function getSchemaLocation()
     {
         return 'pain.001.001.06.xsd';
-        return 'pain.001.001.03.ch.02.xsd';
+        //return 'pain.001.001.03.ch.02.xsd';
     }
 
     /**
@@ -131,6 +150,14 @@ class CustomerCreditTransfer extends AbstractMessage
 
         foreach ($this->payments as $payment) {
             $root->appendChild($payment->asDom($doc));
+        }
+
+        // Optional Supplementary Data
+
+        if ($this->supplementaryData) {
+            foreach ($this->supplementaryData as $supplement) {
+                $root->appendChild($supplement->asDom($doc));
+            }
         }
 
         return $root;

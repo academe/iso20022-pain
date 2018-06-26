@@ -95,6 +95,17 @@ abstract class CreditTransfer
     }
 
     /**
+     * Sets the local instrument
+     *
+     * @return $this
+     */
+    public function setLocalInstrument($value)
+    {
+        $this->localInstrument = $value;
+        return $this;
+    }
+
+    /**
      * Gets the service level
      *
      * @return string|null The service level

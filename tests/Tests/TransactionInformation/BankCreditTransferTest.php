@@ -15,8 +15,9 @@ use Academe\Pain001\TransactionInformation\BankCreditTransfer;
 class BankCreditTransferTest extends TestCase
 {
     /**
+     * No longer invalid.
      * @covers ::__construct
-     * @expectedException \InvalidArgumentException
+     * @ expectedException \InvalidArgumentException
      */
     public function testInvalidCreditorAgent()
     {
