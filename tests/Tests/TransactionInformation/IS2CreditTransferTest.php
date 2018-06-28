@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001\Tests\TransactionInformation;
+namespace Consilience\Pain001\Tests\TransactionInformation;
 
 use Consilience\Pain001\Account\IBAN;
 use Money\Money;

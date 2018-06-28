@@ -6,9 +6,9 @@ use DOMDocument;
 use InvalidArgumentException;
 use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
 use Consilience\Pain001\Account\PostalAccount;
-use Academe\Pain001\PostalAddressInterface;
+use Consilience\Pain001\PostalAddressInterface;
 use Consilience\Pain001\Text;
 
 /**

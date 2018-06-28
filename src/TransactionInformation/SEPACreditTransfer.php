@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use DOMDocument;
 use Consilience\Pain001\FinancialInstitution\BIC;
