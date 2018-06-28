@@ -1,14 +1,14 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
 use DOMDocument;
 use DOMXPath;
-use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\FinancialInstitution\IID;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\IID;
 
 /**
- * @coversDefaultClass \Academe\Pain001\FinancialInstitution\IID
+ * @coversDefaultClass \Consilience\Pain001\FinancialInstitution\IID
  */
 class IIDTest extends TestCase
 {
@@ -18,7 +18,7 @@ class IIDTest extends TestCase
      */
     public function testValid($iid)
     {
-        $this->assertInstanceOf(\Academe\Pain001\FinancialInstitution\IID::class, new IID($iid));
+        $this->assertInstanceOf(\Consilience\Pain001\FinancialInstitution\IID::class, new IID($iid));
     }
 
     public function validSamples()

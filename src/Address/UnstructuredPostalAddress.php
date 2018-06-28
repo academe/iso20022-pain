@@ -1,8 +1,8 @@
 <?php
 
-namespace Academe\Pain001\Address;
-use Academe\Pain001\PostalAddressInterface;
-use Academe\Pain001\Text;
+namespace Consilience\Pain001\Address;
+use Consilience\Pain001\PostalAddressInterface;
+use Consilience\Pain001\Text;
 
 /**
  * This class holds a unstructured representation of a postal address

@@ -1,16 +1,16 @@
 <?php
 
-namespace Academe\Pain001\Tests\TransactionInformation;
+namespace Consilience\Pain001\Tests\TransactionInformation;
 
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\BankCreditTransfer;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\BankCreditTransfer;
 
 /**
- * @coversDefaultClass \Academe\Pain001\TransactionInformation\BankCreditTransfer
+ * @coversDefaultClass \Consilience\Pain001\TransactionInformation\BankCreditTransfer
  */
 class BankCreditTransferTest extends TestCase
 {
@@ -21,7 +21,7 @@ class BankCreditTransferTest extends TestCase
      */
     public function testInvalidCreditorAgent()
     {
-        $creditorAgent = $this->getMock(\Academe\Pain001\FinancialInstitutionInterface::class);
+        $creditorAgent = $this->getMock(\Consilience\Pain001\FinancialInstitutionInterface::class);
 
         $transfer = new BankCreditTransfer(
             'id000',

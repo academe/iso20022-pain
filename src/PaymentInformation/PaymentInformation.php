@@ -1,17 +1,17 @@
 <?php
 
-namespace Academe\Pain001\PaymentInformation;
+namespace Consilience\Pain001\PaymentInformation;
 
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\FinancialInstitutionInterface;
-use Academe\Pain001\AccountInterface;
-use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\Account\UkBank;
-use Academe\Pain001\FinancialInstitution\IID;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\AccountInterface;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\Account\UkBank;
+use Consilience\Pain001\FinancialInstitution\IID;
 use Money\Money;
-use Academe\Pain001\Money\Mixed;
-use Academe\Pain001\Text;
-use Academe\Pain001\TransactionInformation\CreditTransfer;
+use Consilience\Pain001\Money\Mixed;
+use Consilience\Pain001\Text;
+use Consilience\Pain001\TransactionInformation\CreditTransfer;
 
 /**
  * PaymentInformation contains a group of transactions as well as details about the debtor
@@ -59,7 +59,7 @@ class PaymentInformation
     protected $debtorName;
 
     /**
-     * @var \Academe\Pain001\FinancialInstitution\FinancialInstitutionInterface
+     * @var \Consilience\Pain001\FinancialInstitution\FinancialInstitutionInterface
      */
     protected $debtorAgent;
 

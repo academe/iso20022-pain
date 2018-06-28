@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\Account;
+namespace Consilience\Pain001\Account;
 
 use DOMDocument;
 use InvalidArgumentException;
-use Academe\Pain001\AccountInterface;
-use Academe\Pain001\Text;
+use Consilience\Pain001\AccountInterface;
+use Consilience\Pain001\Text;
 
 /**
  * GeneralAccount holds details about an account which is not covered by any of the other classes

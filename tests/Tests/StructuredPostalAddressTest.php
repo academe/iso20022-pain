@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
-use Academe\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Address\StructuredPostalAddress;
 
 /**
- * @coversDefaultClass \Academe\Pain001\Address\StructuredPostalAddress
+ * @coversDefaultClass \Consilience\Pain001\Address\StructuredPostalAddress
  */
 class StructuredPostalAddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ class StructuredPostalAddressTest extends TestCase
      */
     public function testSanitize()
     {
-        $this->assertInstanceOf(\Academe\Pain001\Address\StructuredPostalAddress::class, StructuredPostalAddress::sanitize(
+        $this->assertInstanceOf(\Consilience\Pain001\Address\StructuredPostalAddress::class, StructuredPostalAddress::sanitize(
             'Dorfstrasse',
             '∅',
             'Pfaffenschlag bei Waidhofen an der Thaya',

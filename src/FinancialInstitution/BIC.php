@@ -1,12 +1,12 @@
 <?php
 
-namespace Academe\Pain001\FinancialInstitution;
+namespace Consilience\Pain001\FinancialInstitution;
 
 /**
  * BIC
  */
 
-use Academe\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\FinancialInstitutionInterface;
 
 class BIC implements FinancialInstitutionInterface
 {

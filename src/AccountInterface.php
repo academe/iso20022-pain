@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001;
+namespace Consilience\Pain001;
 
 use DOMDocument;
 use DOMElement;

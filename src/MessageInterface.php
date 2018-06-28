@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001;
+namespace Consilience\Pain001;
 
 /**
  * General interface for ISO-20022 messages

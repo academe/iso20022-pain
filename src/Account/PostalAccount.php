@@ -1,10 +1,10 @@
 <?php
 
-namespace Academe\Pain001\Account;
+namespace Consilience\Pain001\Account;
 
 use DOMDocument;
 use InvalidArgumentException;
-use Academe\Pain001\AccountInterface;
+use Consilience\Pain001\AccountInterface;
 
 /**
  * PostalAccount holds details about a PostFinance account

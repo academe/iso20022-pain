@@ -1,9 +1,9 @@
 <?php
 
-namespace Academe\Pain001\PaymentInformation;
+namespace Consilience\Pain001\PaymentInformation;
 
-use Academe\Pain001\FinancialInstitutionInterface;
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\Account\IBAN;
 
 /**
  * SEPAPaymentInformation contains a group of SEPA transactions

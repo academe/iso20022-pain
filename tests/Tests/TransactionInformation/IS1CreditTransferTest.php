@@ -1,15 +1,15 @@
 <?php
 
-namespace Academe\Pain001\Tests\TransactionInformation;
+namespace Consilience\Pain001\Tests\TransactionInformation;
 
 use Money\Money;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\IS1CreditTransfer;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\IS1CreditTransfer;
 
 /**
- * @coversDefaultClass \Academe\Pain001\TransactionInformation\IS1CreditTransfer
+ * @coversDefaultClass \Consilience\Pain001\TransactionInformation\IS1CreditTransfer
  */
 class IS1CreditTransferTest extends TestCase
 {

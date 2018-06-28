@@ -1,15 +1,15 @@
 <?php
 
-namespace Academe\Pain001\Tests\Money;
+namespace Consilience\Pain001\Tests\Money;
 
-use Academe\Pain001\Money\Mixed;
+use Consilience\Pain001\Money\Mixed;
 use Money\Money;
-use Academe\Pain001\Tests\TestCase;
+use Consilience\Pain001\Tests\TestCase;
 
 class MixedTest extends TestCase
 {
     /**
-     * @covers \Academe\Pain001\Money\Mixed::plus
+     * @covers \Consilience\Pain001\Money\Mixed::plus
      */
     public function testPlus()
     {
@@ -22,7 +22,7 @@ class MixedTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Money\Mixed::minus
+     * @covers \Consilience\Pain001\Money\Mixed::minus
      */
     public function testMinus()
     {

@@ -1,29 +1,29 @@
 <?php
 
-namespace Academe\Pain001\Tests\Message;
+namespace Consilience\Pain001\Tests\Message;
 
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\FinancialInstitutionAddress;
-use Academe\Pain001\Account\GeneralAccount;
-use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\FinancialInstitution\IID;
-use Academe\Pain001\Account\ISRParticipant;
-use Academe\Pain001\Message\CustomerCreditTransfer;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\FinancialInstitutionAddress;
+use Consilience\Pain001\Account\GeneralAccount;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\IID;
+use Consilience\Pain001\Account\ISRParticipant;
+use Consilience\Pain001\Message\CustomerCreditTransfer;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\BankCreditTransfer;
-use Academe\Pain001\TransactionInformation\ForeignCreditTransfer;
-use Academe\Pain001\TransactionInformation\IS1CreditTransfer;
-use Academe\Pain001\TransactionInformation\IS2CreditTransfer;
-use Academe\Pain001\TransactionInformation\ISRCreditTransfer;
-use Academe\Pain001\TransactionInformation\PurposeCode;
-use Academe\Pain001\TransactionInformation\SEPACreditTransfer;
-use Academe\Pain001\Address\UnstructuredPostalAddress;
+use Consilience\Pain001\PaymentInformation\CategoryPurposeCode;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PaymentInformation\SEPAPaymentInformation;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\BankCreditTransfer;
+use Consilience\Pain001\TransactionInformation\ForeignCreditTransfer;
+use Consilience\Pain001\TransactionInformation\IS1CreditTransfer;
+use Consilience\Pain001\TransactionInformation\IS2CreditTransfer;
+use Consilience\Pain001\TransactionInformation\ISRCreditTransfer;
+use Consilience\Pain001\TransactionInformation\PurposeCode;
+use Consilience\Pain001\TransactionInformation\SEPACreditTransfer;
+use Consilience\Pain001\Address\UnstructuredPostalAddress;
 
 class CustomerCreditTransferTest extends TestCase
 {

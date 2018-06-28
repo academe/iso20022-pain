@@ -1,16 +1,16 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use DOMDocument;
 use InvalidArgumentException;
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\FinancialInstitutionInterface;
-use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\AccountInterface;
-use Academe\Pain001\FinancialInstitution\IID;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\PostalAddressInterface;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\AccountInterface;
+use Consilience\Pain001\FinancialInstitution\IID;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PostalAddressInterface;
 use Money\Money;
 
 /**
@@ -24,7 +24,7 @@ class BankCreditTransfer extends CreditTransfer
     protected $creditorIBAN;
 
     /**
-     * @var \Academe\Pain001\FinancialInstitution\FinancialInstitutionInterface
+     * @var \Consilience\Pain001\FinancialInstitution\FinancialInstitutionInterface
      */
     protected $creditorAgent;
 
@@ -47,7 +47,7 @@ class BankCreditTransfer extends CreditTransfer
     ) {
         /*if (! $amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
-                'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
+                'The amount must be an instance of Consilience\Pain001\Money\EUR or Consilience\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
         }*/

@@ -1,12 +1,12 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
 use InvalidArgumentException;
-use Academe\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Account\PostalAccount;
 
 /**
- * @coversDefaultClass \Academe\Pain001\Account\PostalAccount
+ * @coversDefaultClass \Consilience\Pain001\Account\PostalAccount
  */
 class PostalAccountTest extends TestCase
 {
@@ -16,7 +16,7 @@ class PostalAccountTest extends TestCase
      */
     public function testValid($postalAccount)
     {
-        $this->assertInstanceOf(\Academe\Pain001\Account\PostalAccount::class, new PostalAccount($postalAccount));
+        $this->assertInstanceOf(\Consilience\Pain001\Account\PostalAccount::class, new PostalAccount($postalAccount));
     }
 
     public function validSamples()

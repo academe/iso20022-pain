@@ -1,13 +1,13 @@
 <?php
 
-namespace Academe\Pain001\Tests\PaymentInformation;
+namespace Consilience\Pain001\Tests\PaymentInformation;
 
 use DOMDocument;
-use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
-use Academe\Pain001\Tests\TestCase;
+use Consilience\Pain001\PaymentInformation\CategoryPurposeCode;
+use Consilience\Pain001\Tests\TestCase;
 
 /**
- * @coversDefaultClass \Academe\Pain001\PaymentInformation\CategoryPurposeCode
+ * @coversDefaultClass \Consilience\Pain001\PaymentInformation\CategoryPurposeCode
  */
 class CategoryPurposeCodeTest extends TestCase
 {
@@ -17,7 +17,7 @@ class CategoryPurposeCodeTest extends TestCase
      */
     public function testValid($code)
     {
-        $this->assertInstanceOf(\Academe\Pain001\PaymentInformation\CategoryPurposeCode::class, new CategoryPurposeCode($code));
+        $this->assertInstanceOf(\Consilience\Pain001\PaymentInformation\CategoryPurposeCode::class, new CategoryPurposeCode($code));
     }
 
     public function validSamples()

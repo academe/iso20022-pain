@@ -1,10 +1,10 @@
 <?php
 
-namespace Academe\Pain001\FinancialInstitution;
+namespace Consilience\Pain001\FinancialInstitution;
 
-use Academe\Pain001\FinancialInstitution\IID;
+use Consilience\Pain001\FinancialInstitution\IID;
 
-@trigger_error('The Academe\Pain001\FinancialInstitution\BC class is deprecated and will be removed. Use the Academe\Pain001\FinancialInstitution\IID class instead.', E_USER_DEPRECATED);
+@trigger_error('The Consilience\Pain001\FinancialInstitution\BC class is deprecated and will be removed. Use the Consilience\Pain001\FinancialInstitution\IID class instead.', E_USER_DEPRECATED);
 
 /**
  * BC holds a Swiss bank clearing number

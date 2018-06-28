@@ -1,9 +1,9 @@
 <?php
 
-namespace Academe\Pain001\Message;
+namespace Consilience\Pain001\Message;
 
-use Academe\Pain001\MessageInterface;
-use Academe\Pain001\Text;
+use Consilience\Pain001\MessageInterface;
+use Consilience\Pain001\Text;
 
 /**
  * AbstractMessages eases message creation using DOM

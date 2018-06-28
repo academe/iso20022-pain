@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001;
+namespace Consilience\Pain001;
 
 /**
  * General interface for financial institutions

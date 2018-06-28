@@ -1,14 +1,14 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
-use Academe\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\FinancialInstitution\BIC;
 
 class BICTest extends TestCase
 {
     /**
      * @dataProvider validSamples
-     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
+     * @covers \Consilience\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testValid($bic)
     {
@@ -16,7 +16,7 @@ class BICTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
+     * @covers \Consilience\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testInvalidLength()
     {
@@ -25,7 +25,7 @@ class BICTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\FinancialInstitution\BIC::__construct
+     * @covers \Consilience\Pain001\FinancialInstitution\BIC::__construct
      */
     public function testInvalidChars()
     {
@@ -35,7 +35,7 @@ class BICTest extends TestCase
 
     /**
      * @dataProvider validSamples
-     * @covers \Academe\Pain001\FinancialInstitution\BIC::format
+     * @covers \Consilience\Pain001\FinancialInstitution\BIC::format
      */
     public function testFormat($bic)
     {

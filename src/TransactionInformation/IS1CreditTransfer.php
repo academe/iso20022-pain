@@ -1,13 +1,13 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use DOMDocument;
 use InvalidArgumentException;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\PostalAddressInterface;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\PostalAddressInterface;
 
 /**
  * IS1CreditTransfer contains all the information about a IS 1-stage (type 2.1) transaction.
@@ -15,14 +15,14 @@ use Academe\Pain001\PostalAddressInterface;
 class IS1CreditTransfer extends CreditTransfer
 {
     /**
-     * @var \Academe\Pain001\Account\PostalAccount
+     * @var \Consilience\Pain001\Account\PostalAccount
      */
     protected $creditorAccount;
 
     /**
      * {@inheritdoc}
      *
-     * @param \Academe\Pain001\Account\PostalAccount $creditorAccount Postal account of the creditor
+     * @param \Consilience\Pain001\Account\PostalAccount $creditorAccount Postal account of the creditor
      *
      * @throws \InvalidArgumentException When the amount is not in EUR or CHF.
      */
@@ -36,7 +36,7 @@ class IS1CreditTransfer extends CreditTransfer
     ) {
         /*if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
-                'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
+                'The amount must be an instance of Consilience\Pain001\Money\EUR or Consilience\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
         }*/

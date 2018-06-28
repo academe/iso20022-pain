@@ -1,14 +1,14 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
 use InvalidArgumentException;
-use Academe\Pain001\Account\GeneralAccount;
+use Consilience\Pain001\Account\GeneralAccount;
 
 class GeneralAccountTest extends TestCase
 {
     /**
-     * @covers \Academe\Pain001\Account\GeneralAccount::__construct
+     * @covers \Consilience\Pain001\Account\GeneralAccount::__construct
      */
     public function testValid()
     {
@@ -16,7 +16,7 @@ class GeneralAccountTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\GeneralAccount::__construct
+     * @covers \Consilience\Pain001\Account\GeneralAccount::__construct
      * @expectedException InvalidArgumentException
      */
     public function testInvalid()
@@ -25,7 +25,7 @@ class GeneralAccountTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\GeneralAccount::format
+     * @covers \Consilience\Pain001\Account\GeneralAccount::format
      */
     public function testFormat()
     {

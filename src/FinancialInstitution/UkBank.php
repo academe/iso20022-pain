@@ -1,10 +1,10 @@
 <?php
 
-namespace Academe\Pain001\FinancialInstitution;
+namespace Consilience\Pain001\FinancialInstitution;
 
 use DOMDocument;
-use Academe\Pain001\AccountInterface;
-use Academe\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\AccountInterface;
+use Consilience\Pain001\FinancialInstitutionInterface;
 
 /**
  * UkBank

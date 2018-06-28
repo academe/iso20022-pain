@@ -1,15 +1,15 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use DOMDocument;
-use Academe\Pain001\AccountInterface;
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\FinancialInstitutionAddress;
-use Academe\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\AccountInterface;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\FinancialInstitutionAddress;
+use Consilience\Pain001\FinancialInstitutionInterface;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\PostalAddressInterface;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PostalAddressInterface;
 
 /**
  * ForeignCreditTransfer contains all the information about a foreign (type 6) transaction.
@@ -17,7 +17,7 @@ use Academe\Pain001\PostalAddressInterface;
 class ForeignCreditTransfer extends CreditTransfer
 {
     /**
-     * @var \Academe\Pain001\AccountInterface\AccountInterface
+     * @var \Consilience\Pain001\AccountInterface\AccountInterface
      */
     protected $creditorAccount;
 
@@ -34,7 +34,7 @@ class ForeignCreditTransfer extends CreditTransfer
     /**
      * {@inheritdoc}
      *
-     * @param \Academe\Pain001\AccountInterface\AccountInterface                $creditorAccount Account of the creditor
+     * @param \Consilience\Pain001\AccountInterface\AccountInterface                $creditorAccount Account of the creditor
      * @param BIC|FinancialInstitutionAddress $creditorAgent   BIC or address of the creditor's financial institution
      */
     public function __construct(

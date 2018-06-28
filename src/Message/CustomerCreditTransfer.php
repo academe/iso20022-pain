@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\Message;
+namespace Consilience\Pain001\Message;
 
-use Academe\Pain001\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\Text;
-use Academe\Pain001\SupplementaryDataInterface;
+use Consilience\Pain001\Money;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\Text;
+use Consilience\Pain001\SupplementaryDataInterface;
 
 /**
  * CustomerCreditTransfer represents a Customer Credit Transfer Initiation (pain.001) message
@@ -128,7 +128,7 @@ class CustomerCreditTransfer extends AbstractMessage
     protected function buildDom(\DOMDocument $doc)
     {
         $transactionCount = 0;
-        $transactionSum = new \Academe\Pain001\Money\Mixed(0);
+        $transactionSum = new \Consilience\Pain001\Money\Mixed(0);
 
         foreach ($this->payments as $payment) {
             // Each payment may contain multiple transactions.

@@ -1,12 +1,12 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
 use DOMDocument;
-use Academe\Pain001\Text;
+use Consilience\Pain001\Text;
 
 /**
- * @coversDefaultClass \Academe\Pain001\Text
+ * @coversDefaultClass \Consilience\Pain001\Text
  */
 class TextTest extends TestCase
 {

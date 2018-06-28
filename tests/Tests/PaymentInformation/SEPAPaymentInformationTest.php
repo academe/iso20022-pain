@@ -1,19 +1,19 @@
 <?php
 
-namespace Academe\Pain001\Tests\PaymentInformation;
+namespace Consilience\Pain001\Tests\PaymentInformation;
 
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\SEPAPaymentInformation;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\BankCreditTransfer;
-use Academe\Pain001\TransactionInformation\SEPACreditTransfer;
-use Academe\Pain001\Address\UnstructuredPostalAddress;
+use Consilience\Pain001\PaymentInformation\SEPAPaymentInformation;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\BankCreditTransfer;
+use Consilience\Pain001\TransactionInformation\SEPACreditTransfer;
+use Consilience\Pain001\Address\UnstructuredPostalAddress;
 
 /**
- * @coversDefaultClass \Academe\Pain001\PaymentInformation\SEPAPaymentInformation
+ * @coversDefaultClass \Consilience\Pain001\PaymentInformation\SEPAPaymentInformation
  */
 class SEPAPaymentInformationTest extends TestCase
 {

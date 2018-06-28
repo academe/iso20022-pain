@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\PostalAddressInterface;
-use Academe\Pain001\Text;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PostalAddressInterface;
+use Consilience\Pain001\Text;
 use Money\Currencies\ISOCurrencies;
 use Money\Formatter\DecimalMoneyFormatter;
 

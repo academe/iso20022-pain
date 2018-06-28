@@ -3,11 +3,11 @@
 namespace Academe\Pain001\TransactionInformation;
 
 use DOMDocument;
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\PostalAddressInterface;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\PostalAddressInterface;
 
 /**
  * SEPACreditTransfer contains all the information about a foreign SEPA (type 5) transaction.

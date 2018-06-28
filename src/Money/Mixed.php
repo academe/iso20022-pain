@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001\Money;
+namespace Consilience\Pain001\Money;
 
 /**
  * Sum of money in mixed currencies
@@ -97,7 +97,7 @@ class Mixed
             $aDecimals = $currencies->subunitFor($a->getCurrency());
         } else {
             throw new InvalidArgumentException(sprintf(
-                'The amount must be an instance of Academe\Pain001\Mixed or Money\Money (instance of %s given).',
+                'The amount must be an instance of Consilience\Pain001\Mixed or Money\Money (instance of %s given).',
                 get_class($b)
             ));
         }
@@ -108,7 +108,7 @@ class Mixed
             $bDecimals = $currencies->subunitFor($b->getCurrency());
         } else {
             throw new InvalidArgumentException(sprintf(
-                'The amount must be an instance of Academe\Pain001\Mixed or Money\Money (instance of %s given).',
+                'The amount must be an instance of Consilience\Pain001\Mixed or Money\Money (instance of %s given).',
                 get_class($b)
             ));
         }

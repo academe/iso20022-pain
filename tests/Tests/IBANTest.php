@@ -1,14 +1,14 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\Account\IBAN;
 
 class IBANTest extends TestCase
 {
     /**
      * @dataProvider samplesValid
-     * @covers \Academe\Pain001\Account\IBAN::__construct
+     * @covers \Consilience\Pain001\Account\IBAN::__construct
      */
     public function testValid($iban)
     {
@@ -16,7 +16,7 @@ class IBANTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\IBAN::__construct
+     * @covers \Consilience\Pain001\Account\IBAN::__construct
      */
     public function testInvalidChars()
     {
@@ -25,7 +25,7 @@ class IBANTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\IBAN::__construct
+     * @covers \Consilience\Pain001\Account\IBAN::__construct
      */
     public function testWrongChecksum()
     {
@@ -35,7 +35,7 @@ class IBANTest extends TestCase
 
     /**
      * @dataProvider samplesValid
-     * @covers \Academe\Pain001\Account\IBAN::getCountry
+     * @covers \Consilience\Pain001\Account\IBAN::getCountry
      */
     public function testGetCountry($iban, $expectedCountry)
     {
@@ -44,7 +44,7 @@ class IBANTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\IBAN::format
+     * @covers \Consilience\Pain001\Account\IBAN::format
      */
     public function testFormat()
     {
@@ -53,7 +53,7 @@ class IBANTest extends TestCase
     }
 
     /**
-     * @covers \Academe\Pain001\Account\IBAN::normalize
+     * @covers \Consilience\Pain001\Account\IBAN::normalize
      */
     public function testNormalize()
     {
@@ -64,7 +64,7 @@ class IBANTest extends TestCase
     /**
      * @depends testFormat
      * @dataProvider samplesValid
-     * @covers \Academe\Pain001\Account\IBAN::__toString
+     * @covers \Consilience\Pain001\Account\IBAN::__toString
      */
     public function testToString($iban)
     {

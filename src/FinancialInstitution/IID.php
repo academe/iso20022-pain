@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\FinancialInstitution;
+namespace Consilience\Pain001\FinancialInstitution;
 
 use DOMDocument;
 use InvalidArgumentException;
-use Academe\Pain001\Account\IBAN;
-use Academe\Pain001\FinancialInstitutionInterface;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitutionInterface;
 
 /**
  * IID holds a Swiss institutional identification number (formerly known as BC number)

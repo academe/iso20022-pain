@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Academe\\Pain001\\": "src"
+            "Consilience\\Pain001\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Academe\\Pain001\\": "tests/"
+            "Consilience\\Pain001\\": "tests/"
         }
     }
 }

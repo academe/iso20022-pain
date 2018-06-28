@@ -1,16 +1,16 @@
 <?php
 
-namespace Academe\Pain001\TransactionInformation;
+namespace Consilience\Pain001\TransactionInformation;
 
 use DOMDocument;
 use InvalidArgumentException;
 use LogicException;
-use Academe\Pain001\Account\ISRParticipant;
+use Consilience\Pain001\Account\ISRParticipant;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\PostalAddressInterface;
-use Academe\Pain001\Text;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\PostalAddressInterface;
+use Consilience\Pain001\Text;
 
 /**
  * ISRCreditTransfer contains all the information about a ISR (type 1) transaction.
@@ -44,7 +44,7 @@ class ISRCreditTransfer extends CreditTransfer
     ) {
         /*if (!$amount instanceof Money\EUR && !$amount instanceof Money\CHF) {
             throw new InvalidArgumentException(sprintf(
-                'The amount must be an instance of Academe\Pain001\Money\EUR or Academe\Pain001\Money\CHF (instance of %s given).',
+                'The amount must be an instance of Consilience\Pain001\Money\EUR or Consilience\Pain001\Money\CHF (instance of %s given).',
                 get_class($amount)
             ));
         }*/

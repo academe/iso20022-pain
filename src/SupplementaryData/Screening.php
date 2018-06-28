@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001\SupplementaryData;
+namespace Consilience\Pain001\SupplementaryData;
 
 class Screening extends AbstractSupplementaryData
 {

@@ -2,15 +2,15 @@
 
 namespace Academe\Pain001\Tests\TransactionInformation;
 
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\IS2CreditTransfer;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\IS2CreditTransfer;
 
 /**
- * @coversDefaultClass \Academe\Pain001\TransactionInformation\IS2CreditTransfer
+ * @coversDefaultClass \Consilience\Pain001\TransactionInformation\IS2CreditTransfer
  */
 class IS2CreditTransferTest extends TestCase
 {

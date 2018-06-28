@@ -1,6 +1,6 @@
 <?php
 
-namespace Academe\Pain001\PaymentInformation;
+namespace Consilience\Pain001\PaymentInformation;
 
 use DOMDocument;
 use InvalidArgumentException;

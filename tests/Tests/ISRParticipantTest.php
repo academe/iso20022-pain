@@ -1,11 +1,11 @@
 <?php
 
-namespace Academe\Pain001\Tests;
+namespace Consilience\Pain001\Tests;
 
-use Academe\Pain001\Account\ISRParticipant;
+use Consilience\Pain001\Account\ISRParticipant;
 
 /**
- * @coversDefaultClass \Academe\Pain001\Account\ISRParticipant
+ * @coversDefaultClass \Consilience\Pain001\Account\ISRParticipant
  */
 class ISRParticipantTest extends TestCase
 {
@@ -15,7 +15,7 @@ class ISRParticipantTest extends TestCase
      */
     public function testValid($number)
     {
-        $this->assertInstanceOf(\Academe\Pain001\Account\ISRParticipant::class, new ISRParticipant($number));
+        $this->assertInstanceOf(\Consilience\Pain001\Account\ISRParticipant::class, new ISRParticipant($number));
     }
 
     /**

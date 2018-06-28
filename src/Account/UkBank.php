@@ -1,9 +1,9 @@
 <?php
 
-namespace Academe\Pain001\Account;
+namespace Consilience\Pain001\Account;
 
 use DOMDocument;
-use Academe\Pain001\AccountInterface;
+use Consilience\Pain001\AccountInterface;
 
 /**
  * UkBank

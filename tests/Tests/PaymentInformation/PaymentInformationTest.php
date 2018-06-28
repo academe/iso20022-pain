@@ -1,21 +1,21 @@
 <?php
 
-namespace Academe\Pain001\Tests\PaymentInformation;
+namespace Consilience\Pain001\Tests\PaymentInformation;
 
 use DOMDocument;
 use DOMXPath;
-use Academe\Pain001\FinancialInstitution\BIC;
-use Academe\Pain001\Account\IBAN;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Account\IBAN;
 use Money\Money;
-use Academe\Pain001\PaymentInformation\CategoryPurposeCode;
-use Academe\Pain001\PaymentInformation\PaymentInformation;
-use Academe\Pain001\Account\PostalAccount;
-use Academe\Pain001\Address\StructuredPostalAddress;
-use Academe\Pain001\Tests\TestCase;
-use Academe\Pain001\TransactionInformation\IS1CreditTransfer;
+use Consilience\Pain001\PaymentInformation\CategoryPurposeCode;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
+use Consilience\Pain001\TransactionInformation\IS1CreditTransfer;
 
 /**
- * @coversDefaultClass \Academe\Pain001\PaymentInformation\PaymentInformation
+ * @coversDefaultClass \Consilience\Pain001\PaymentInformation\PaymentInformation
  */
 class PaymentInformationTest extends TestCase
 {
@@ -26,7 +26,7 @@ class PaymentInformationTest extends TestCase
      */
     public function testInvalidDebtorAgent()
     {
-        $debtorAgent = $this->getMock(\Academe\Pain001\FinancialInstitutionInterface::class);
+        $debtorAgent = $this->getMock(\Consilience\Pain001\FinancialInstitutionInterface::class);
 
         $payment = new PaymentInformation(
             'id000',

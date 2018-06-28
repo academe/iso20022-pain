@@ -1,12 +1,12 @@
 <?php
 
-namespace Academe\Pain001\SupplementaryData;
+namespace Consilience\Pain001\SupplementaryData;
 
 /**
  * AbstractSupplementaryData
  */
 
-use Academe\Pain001\SupplementaryDataInterface;
+use Consilience\Pain001\SupplementaryDataInterface;
 use DOMDocument;
 use DOMElement;
 

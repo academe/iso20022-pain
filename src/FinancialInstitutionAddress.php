@@ -1,7 +1,7 @@
 <?php
 
-namespace Academe\Pain001;
-use Academe\Pain001\FinancialInstitutionInterface;
+namespace Consilience\Pain001;
+use Consilience\Pain001\FinancialInstitutionInterface;
 
 /**
  * FinancialInstitutionAddress holds information to identify a FI by name and address
