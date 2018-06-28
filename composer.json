@@ -1,5 +1,5 @@
 {
-    "name": "academe/iso20022-pain",
+    "name": "consilience/iso20022-pain",
     "type": "library",
     "license": "MIT",
     "description": "PHP library to generate UK pain.001 messages (complies with ISO-20022)",

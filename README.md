@@ -8,7 +8,7 @@ FIXME:
 
 ## Installation
 Consilience\Pain001
-Just install [Composer](http://getcomposer.org) and run `composer require academe/iso20022-pain` in your project directory.
+Just install [Composer](http://getcomposer.org) and run `composer require consilience/iso20022-pain` in your project directory.
 
 ## TODO
 
