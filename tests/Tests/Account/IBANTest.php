@@ -1,8 +1,9 @@
 <?php
 
-namespace Consilience\Pain001\Tests;
+namespace Consilience\Pain001\Tests\Account;
 
 use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\Tests\TestCase;
 
 class IBANTest extends TestCase
 {

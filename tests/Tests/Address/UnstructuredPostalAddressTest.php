@@ -1,8 +1,9 @@
 <?php
 
-namespace Consilience\Pain001\Tests;
+namespace Consilience\Pain001\Tests\Address;
 
 use Consilience\Pain001\Address\UnstructuredPostalAddress;
+use Consilience\Pain001\Tests\TestCase;
 
 /**
  * @coversDefaultClass \Consilience\Pain001\Address\UnstructuredPostalAddress

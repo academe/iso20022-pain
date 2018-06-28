@@ -32,6 +32,9 @@ class CustomerCreditTransferTest extends TestCase
     const SCHEMA_PATH = 'pain.001.001.06.xsd';
     //const SCHEMA_PATH = 'pain.001.001.03.ch.02.xsd';
 
+    /**
+     * @return CustomerCreditTransfer
+     */
     protected function buildMessage()
     {
         $transaction = new BankCreditTransfer(

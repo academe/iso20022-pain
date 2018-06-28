@@ -1,8 +1,9 @@
 <?php
 
-namespace Consilience\Pain001\Tests;
+namespace Consilience\Pain001\Tests\FinancialInstitution;
 
 use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Tests\TestCase;
 
 class BICTest extends TestCase
 {

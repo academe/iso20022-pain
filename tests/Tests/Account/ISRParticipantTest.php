@@ -1,8 +1,9 @@
 <?php
 
-namespace Consilience\Pain001\Tests;
+namespace Consilience\Pain001\Tests\Account;
 
 use Consilience\Pain001\Account\ISRParticipant;
+use Consilience\Pain001\Tests\TestCase;
 
 /**
  * @coversDefaultClass \Consilience\Pain001\Account\ISRParticipant

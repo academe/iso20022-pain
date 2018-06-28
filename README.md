@@ -7,7 +7,7 @@ FIXME:
 **Pain.001** is a PHP library to generate UK pain.001.001.06 XML messages (complies with ISO-20022).
 
 ## Installation
-
+Consilience\Pain001
 Just install [Composer](http://getcomposer.org) and run `composer require academe/iso20022-pain` in your project directory.
 
 ## TODO
@@ -38,21 +38,21 @@ To get a basic understanding on how the messages are structured, take a look [th
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Z38\SwissPayment\BIC;
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\Message\CustomerCreditTransfer;
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\PaymentInformation\PaymentInformation;
-use Z38\SwissPayment\PostalAccount;
-use Z38\SwissPayment\StructuredPostalAddress;
-use Z38\SwissPayment\TransactionInformation\BankCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\IS1CreditTransfer;
-use Z38\SwissPayment\UnstructuredPostalAddress;
+use Consilience\Pain001\FinancialInstitution\BIC;
+use Consilience\Pain001\Account\IBAN;
+use Consilience\Pain001\Message\CustomerCreditTransfer;
+use Money\Money;
+use Consilience\Pain001\PaymentInformation\PaymentInformation;
+use Consilience\Pain001\Account\PostalAccount;
+use Consilience\Pain001\Address\StructuredPostalAddress;
+use Consilience\Pain001\TransactionInformation\BankCreditTransfer;
+use Consilience\Pain001\TransactionInformation\IS1CreditTransfer;
+use Consilience\Pain001\Address\UnstructuredPostalAddress;
 
 $transaction1 = new BankCreditTransfer(
     'instr-001',
     'e2e-001',
-    new Money\CHF(130000), // CHF 1300.00
+    Money::CHF(130000), // CHF 1300.00
     'Muster Transport AG',
     new StructuredPostalAddress('Wiesenweg', '14b', '8058', 'Zürich-Flughafen'),
     new IBAN('CH51 0022 5225 9529 1301 C'),
@@ -62,7 +62,7 @@ $transaction1 = new BankCreditTransfer(
 $transaction2 = new IS1CreditTransfer(
     'instr-002',
     'e2e-002',
-    new Money\CHF(30000), // CHF 300.00
+    Money::CHF(30000), // CHF 300.00
     'Finanzverwaltung Stadt Musterhausen',
     UnstructuredPostalAddress::sanitize('Altstadt 1a', '4998 Musterhausen'),
     new PostalAccount('80-151-4')
@@ -83,7 +83,7 @@ $message->addPayment($payment);
 echo $message->asXml();
 ```
 
-**Tip:** Take a look at `Z38\SwissPayment\Tests\Message\CustomerCreditTransferTest` to see all payment types in action.
+**Tip:** Take a look at `Consilience\Pain001\Tests\Message\CustomerCreditTransferTest` to see all payment types in action.
 
 ## Caveats
 

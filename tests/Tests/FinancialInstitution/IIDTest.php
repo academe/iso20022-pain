@@ -1,7 +1,8 @@
 <?php
 
-namespace Consilience\Pain001\Tests;
+namespace Consilience\Pain001\Tests\FinancialInstitution;
 
+use Consilience\Pain001\Tests\TestCase;
 use DOMDocument;
 use DOMXPath;
 use Consilience\Pain001\Account\IBAN;
