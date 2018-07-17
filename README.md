@@ -1,8 +1,6 @@
 # Pain.001
 
-FIXME:
-[![Build Status](https://travis-ci.org/z38/swiss-payment.png?branch=master)](https://travis-ci.org/z38/swiss-payment)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/z38/swiss-payment/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/z38/swiss-payment/?branch=master)
+**This repository has moved to https://github.com/consilience/iso20022-pain**
 
 **Pain.001** is a PHP library to generate UK pain.001.001.06 XML messages (complies with ISO-20022).
 
